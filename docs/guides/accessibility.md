@@ -266,39 +266,39 @@ Typstでこれを行うには、以下のsetルールを、文書内のどのコ
 
 [Adobe Acrobat の自動アクセシビリティチェック][acro-check-outline]を通過するためには、21ページ以上の文書にはアウトライン化された見出しが必要であることに注意してください。
 
-## Accessibility Standards and Legislation { #accessibility-standards-and-legislation }
+## アクセシビリティ標準と法令 { #accessibility-standards-and-legislation }
 
-Typst can help you to assert that your document is accessible by checking it against international standards. For PDF export, there are multiple standards for accessible files, most notably the PDF/UA standard. Its first part (PDF/UA-1) is already supported by Typst while support for the second part (PDF/UA-2) is planned for the future. Below, you can find an explanation of all relevant standards:
+Typstは、あなたの文書を国際標準に照らしてチェックすることで、その文書がアクセシブルであると主張することを支援できます。PDFエクスポートに関しては、アクセシブルなファイルのための複数の標準があり、特にPDF/UA標準が有名です。その第1部（PDF/UA-1）はすでにTypstでサポートされており、第2部（PDF/UA-2）のサポートは将来に向けて計画されています。以下に、関連するすべての標準についての説明を示します。
 
-- **Tagged PDF:** Tagged PDFs contain machine-readable data about the semantic structure of a document that AT can parse. Typst will write Tagged PDFs by default, but keep in mind that Typst can only write appropriate tags if it knows about the semantic structure of your document. Refer to the Section [_Maintaining semantics_](#maintaining-semantics) to learn how to use Typst's elements to communicate semantics. To provide Universal Access, you are also responsible to provide textual representation of non-text content yourself.
+- **Tagged PDF:** Tagged PDFには、ATが解析できる、文書のセマンティックな構造に関する機械可読なデータが含まれています。TypstはデフォルトでTagged PDFを書き出しますが、Typstは文書のセマンティックな構造について知っている場合にのみ適切なタグを付けることができることに注意してください。Typstの要素を使用してセマンティクスを伝える方法については、[_Maintaining semantics_](#maintaining-semantics)セクションを参照してください。ユニバーサルアクセスを提供するためには、非テキストコンテンツのテキスト表現も自分で提供する責任があります。
 
-- **PDF/UA-1:** The PDF/UA standard explains how to write a PDF 1.7 file optimized for Universal Access. It implies Tagged PDF, enforces alternative descriptions for images and mathematics, requires a document title, and introduces rules how document contents like tables should be structured. If you are following this guide, you are already avoiding most of the compiler errors that can occur during PDF/UA-1 export.
+- **PDF/UA-1:** PDF/UA-1標準は、ユニバーサルアクセスに最適化されたPDF 1.7ファイルの書き方を説明しています。Tagged PDFを前提とし、画像や数学の代替説明を強制し、文書タイトルを要求し、表などの文書内容の構造に関するルールを導入します。このガイドに従っていれば、PDF/UA-1エクスポート中に発生する可能性のあるほとんどのコンパイラーエラーをすでに回避しています。
 
-- **PDF/UA-2:** There is also the more recent part PDF/UA-2 that targets PDF 2.0 files. It improves accessibility for mathematics and some semantic elements. Support for PDF/UA-2 not yet available in Typst, but planned.
+- **PDF/UA-2:** PDF 2.0ファイルを対象とした、より新しいPDF/UA-2という標準もあります。これは、数式やいくつかのセマンティックな要素のアクセシビリティを改善します。PDF/UA-2のサポートはまだTypstでは利用できませんが、計画されています。
 
-- **Well Tagged PDF (WTPDF):** This is an industry standard that is very similar to PDF/UA-2. Like PDF/UA-2, it is not currently supported by Typst. Originally, it was drafted because both parts of the PDF/UA specification were only available at a high cost from the International Standards Organization. Hence, [WTPDF][WTPDF] was designed so that all conforming files can also declare conformance with PDF/UA-2. By now, [both parts of the PDF/UA specification are available free of charge][pdf-ua-free], decreasing the relevance of WTPDF.
+- **Well Tagged PDF (WTPDF):** これは、PDF/UA-2に非常によく似た業界標準です。PDF/UA-2と同様に、現在Typstではサポートされていません。もともとは、PDF/UA仕様の両方の部分が国際標準化機構から高額でしか入手できなかったために策定されました。そのため、[WTPDF][WTPDF]はすべての適合するファイルがPDF/UA-2への適合も宣言できるように設計されました。現在では、[PDF/UA仕様の両方の部分が無料で利用可能になっている][pdf-ua-free]ため、WTPDFの関連性は低下しています。
 
-- **PDF/A-1a:** The PDF/A standard describes how to produce PDF files that are well-suited for archival. Parts one to three of the PDF/A standard feature multiple conformance levels. The strictest conformance level A contains rules for accessibility as only files meeting those rules remain usable to the broadest range of people in the far future. Level A implies conformance with Tagged PDF and forces you to provide alternative descriptions for images. Other PDF/A rules not relating to accessibility, e.g. about transparency, colors, and more also apply. This part of the PDF/A standard is based on the outdated PDF 1.4 specification. Only use it if your venue requires it or if you need a very compatible file. Otherwise, PDF/UA-1 and the second and third part of PDF/A provide better alternatives.
+- **PDF/A-1a:** PDF/A標準は、アーカイブに適したPDFファイルの作成方法を説明しています。PDF/A標準の第1部から第3部には複数の適合レベルがあります。最も厳しい適合レベルAにはアクセシビリティのルールが含まれており、そのルールを満たすファイルだけが将来の幅広い人々にとって利用可能な状態を保てます。レベルAはTagged PDFへの適合を前提とし、画像の代替説明を提供することを強制します。アクセシビリティに関連しない他のPDF/Aルール（例：透明性、色など）も適用されます。このPDF/A標準のこの部分は、古いPDF 1.4仕様に基づいています。提出先がそれを要求する場合や、非常に互換性の高いファイルが必要な場合にのみ使用してください。それ以外の場合は、PDF/UA-1とPDF/Aの第2部と第3部がより良い代替手段を提供します。
 
-- **PDF/A-2a** and **PDF/A-3a:** Like the first part of PDF/A, these standards focus on creating files suitable for archival and long-term storage. Both of these standards target the newer PDF version 1.7 instead of PDF 1.4. Here too, the strictest conformance level A contains rules for accessibility. In addition to the rules in PDF/A-1a, these standards disallow the use of characters in the [Unicode Private Use Area][unic-pua] whose meaning is not universally defined. Improvements over PDF/A-1 include the ability to use transparency and better reflow. When choosing between these two parts of the PDF/A standard, choose PDF/A-2a unless you need to [attach]($pdf.attach) other files. Note that conformance level A has been removed from PDF/A-4 in favor of the dedicated PDF/UA standard.
+- **PDF/A-2a** と **PDF/A-3a:** PDF/Aの第1部と同様に、これらの標準はアーカイブや長期保存に適したファイルの作成に焦点を当てています。これらの両方の標準は、PDF 1.4ではなく新しいPDFバージョン1.7を対象としています。ここでも、最も厳しい適合レベルAにはアクセシビリティのルールが含まれています。PDF/A-1aのルールに加えて、これらの標準では、意味が普遍的に定義されていない[Unicode Private Use Area][unic-pua]の文字の使用が禁止されています。PDF/A-1に対する改善点には、透明性の使用やより良いリフローが可能になることが含まれます。PDF/A標準のこの2つの部のどちらを選ぶかについては、他のファイルを[添付]($pdf.attach)する必要がない限り、PDF/A-2aを選択してください。適合レベルAは専用のPDF/UA標準を優先するため、PDF/A-4からは削除されたことに注意してください。
 
-The [PDF reference page]($pdf/#pdf-standards) contains more information about each supported standard. To enable either PDF/UA, PDF/A-2a, or PDF/A-3a, use the [appropriate flag in the CLI]($pdf/#command-line) or use the export dropdown and click on PDF in the web app. At the moment, you must choose between PDF/A and PDF/UA. For accessibility-focused documents, we recommend the latter.
+[PDFリファレンスページ]($pdf/#pdf-standards)には、サポートされている各標準に関する詳細な情報が含まれています。PDF/UA、PDF/A-2a、またはPDF/A-3aのいずれかを有効にするには、[CLIの適切なフラグ]($pdf/#command-line)を使用するか、Webアプリでエクスポートのドロップダウンを使用してPDFをクリックしてください。現時点では、PDF/AとPDF/UAのどちらかを選択する必要があります。アクセシビリティに焦点を当てた文書の場合は、後者をおすすめします。
 
-When you select one of these standards for PDF export, Typst will detect if you are in violation of their rules and fail the export with a descriptive error message. For the strictest accessibility check currently available, choose PDF/UA-1. Do not disable tagging unless you have a good reason, as tags provide a baseline of accessibility across all documents you export.
+PDFエクスポート用にこれらの標準のいずれかを選択すると、Typstはあなたがそのルールに違反しているかどうかを検出し、違反している場合は説明付きのエラーメッセージを表示してエクスポートを失敗させます。現時点で利用可能な最も厳格なアクセシビリティチェックを行うには、PDF/UA-1を選んでください。タグは、エクスポートするすべての文書に対してアクセシビリティのベースラインを提供するため、正当な理由がない限りタグ付けを無効にしないでください。
 
-Maybe you already noticed that some of the factors that go into Universal Access are hard to check automatically. For example, Typst will currently not automatically check that your color contrasts are sufficient or whether the configured natural language matches the actual natural language (although the amount of spellcheck errors should provide a hint if you are using the web app). There are two international standards that address some of these human factors in more detail:
+ユニバーサルアクセスを構成する要素の中には、自動的なチェックが難しいものがあることにすでにお気づきかもしれません。例えば、Typstは現時点では、色のコントラストが十分かどうか、あるいは設定された自然言語が実際の自然言語と一致しているかどうかを自動的にはチェックしません（ただし、Webアプリを使っている場合はスペルチェックエラーの数が手掛かりになるはずです）。これらの人間的な要素のいくつかをより詳細に扱う国際標準が2つあります。
 
-- The **[Web Content Accessibility Guidelines (WCAG)][WCAG]**: Designed by the W3C, a big international consortium behind the technologies that power the internet, WCAG describes how to make a web site accessible. All of these rules are applicable to Typst's HTML output, and many of them apply to its PDF output. WCAG separates its rules into the three levels A, AA, and AAA. It is recommended that normal documents aim for AA. If you have high standards for Universal Access, you can also consider AAA Success Criteria. However, Typst does not yet expose all PDF features needed for AAA compliance, e.g. an AT-accessible way to define expansions for abbreviations.
-- The **[European Norm EN 301 549][EN301549]**: Its Section 9 describes how to create accessible websites and its Section 10 describes what rules apply to non-web documents, including PDFs created by Typst. It points out which WCAG clauses are also applicable to PDFs. Conformance with this standard is a good start for complying with EU and national accessibility laws.
+- The **[Web Content Accessibility Guidelines (WCAG)][WCAG]**: インターネットを支える技術の背後にある大規模な国際コンソーシアムであるW3Cによって策定されたWCAGは、Webサイトをアクセシブルにする方法を示しています。これらのルールはすべてTypstのHTML出力に適用可能であり、その多くはTypstのPDF出力にも適用されます。WCAGはそのルールをA、AA、AAAの3つのレベルに分けています。通常の文書はAAを目指すことが推奨されます。ユニバーサルアクセスに高い基準を求めるのであれば、AAAの達成基準も検討できます。ただし、TypstはまだAAA準拠に必要なすべてのPDF機能を公開しているわけではありません。例えば、略語の展開をATがアクセスできる方法で定義することなどです。
+- The **[European Norm EN 301 549][EN301549]**: 第9節は、アクセシブルなWebサイトの作成方法を説明し、第10節は、Typstで作成されたPDFを含む非Web文書に適用されるルールを説明しています。この標準は、どのWCAG条項がPDFにも適用されるかを指摘しています。この標準への適合は、EUおよび各国のアクセシビリティ法に準拠するための良い出発点です。
 
-Keep in mind that in order to conform with EN 301 549 and the relevant WCAG provisions, your document must be tagged. If you aim for conformance, we strongly suggest using PDF/UA-1 for export to automate many of the checks for the success criteria within.
+EN 301 549および関連するWCAGの規定に適合するためには、文書がタグ付けされていなければならないことに留意して下さい。適合を目指すのであれば、それらに含まれる達成基準に関する多くのチェックを自動化するために、PDF/UA-1をエクスポートに使用することを強くお勧めします。
 
-Many territories have accessibility legislation that requires you to create accessible files under some circumstances. Here are only some of them:
+多くの地域には、一定の状況下でアクセシブルなファイルの作成を要求するアクセシビリティ法があります。以下はその一部です。
 
-- **[European Accessibility Act (EAA, EU 2019/882)][EAA]**: This regulation applies to e-books, consumer banking services, e-commerce services, and more. It requires the files distributed in these applications to be accessible.
-- **Americans with Disabilities Act (ADA)**: The Department of Justice will [require public sector organizations to provide files][ADA-2] in accordance to WCAG under Title II of the ADA by 2026. Likewise, [private organizations can be held liable][ADA-dominos] for inaccessible digital services under the ADA and state law.
+- **[European Accessibility Act (EAA, EU 2019/882)][EAA]**: この規則は、電子書籍、消費者向け銀行サービス、電子商取引サービスなどに適用されます。これらのアプリケーションで配布されるファイルがアクセシブルであることを要求します。
+- **Americans with Disabilities Act (ADA)**: 米国司法省は、2026年までにADA第II編の下で、[公的機関に対してWCAGに準拠したファイルの提供を要求する][ADA-2]予定です。同様に、[民間組織もADAおよび州法の下でアクセシブルでないデジタルサービスに対して責任を問われる可能性][ADA-dominos]があります。
 
-Using this guide can help you reach compliance with either regulation.
+このガイドの使用は、どちらの規則への準拠に近づくのにも役立ちます。
 
 ## Testing for Accessibility { #testing-for-accessibility }
 
