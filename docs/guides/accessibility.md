@@ -334,7 +334,7 @@ PDF文書がアクセシブルかどうかをテストするには、自動ツ�
 
 最後に、PDFはもともと印刷を目的として設計された形式であることを忘れないでください。したがって、あなたの文書を印刷して読むことを選んだユーザーに対して、リンクのようなインタラクティブ機能が利用できるものだと想定してはいけません。
 
-前述のとおり、PNGおよびSVGエクスポートで作成されたファイルはアクセシブルではありません。
+前述の通り、PNGおよびSVGエクスポートで作成されたファイルはアクセシブルではありません。
 
 [^1]: ドイツ連邦統計局（Statistisches Bundesamt, Destatis）のデータセット。["Bruttostromerzeugung nach Energieträgern in Deutschland ab 1990"](https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Energie/Erzeugung/bar-chart-race.html), 2025, available under the _Data licence Germany – attribution – version 2.0._
 
