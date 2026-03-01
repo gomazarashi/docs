@@ -302,29 +302,25 @@ EN 301 549および関連するWCAGの規定に適合するためには、文書
 
 ## アクセシビリティのテスト { #testing-for-accessibility }
 
-In order to test whether your PDF document is accessible, you can use automated tools and manual testing. Some standards like PDF/UA and PDF/A can be checked exclusively through automated tools, while some rules in WCAG and other standards require manual checks. Many of the automatable checks are automatically passed by Typst when Tagged PDF is enabled. For many other automatable checks, you can enable PDF/UA-1 export so that Typst will run them instead. Automated tools can only provide a baseline of accessibility. For truly Universal Access, it is best if you try the document yourself with AT.
-
 PDF文書がアクセシブルかどうかをテストするには、自動ツールと手動テストを利用できます。PDF/UAやPDF/Aのような一部の規格は自動ツールだけでチェックできますが、WCAGやその他の規格のいくつかのルールは手動チェックが必要です。自動化可能なチェックの多くは、Tagged PDFが有効になっていればTypstによって自動的に通過します。さらに多くの自動化可能なチェックについては、PDF/UA-1エクスポートを有効にすると、Typstが代わりにそれらを実行します。自動化ツールはアクセシビリティの基準を提供することしかできません。真のユニバーサルアクセスのためには、ATを使って自分で文書を試すのが最善です。
-
-Here is a list of automated checkers to try to test for conformance:
 
 適合性の確認に使える自動チェッカーの一覧は以下の通りです。
 
-- **[veraPDF][veraPDF]:** This open-source tool can check if your PDF file conforms to the parts of the PDF/A and PDF/UA standards it declared conformance with. Use this tool if you have chosen one of these standards during export. Failures are considered bugs in Typst and should be [reported on GitHub](https://github.com/typst/typst/issues).
+- **[veraPDF][veraPDF]:** このオープンソースツールは、あなたのPDFファイルが、PDF/AおよびPDF/UA規格のうち、そのファイルが適合を宣言している部分に準拠しているかどうかを確認できます。エクスポート時にこれらの規格のいずれかを選択した場合は、このツールを使用してください。失敗はTypstのバグと見なされるため、[GitHubで報告](https://github.com/typst/typst/issues)してください。
 
-- **[PDF Accessibility Checker (PAC)][PAC]:** The freeware PAC checks whether your document complies with PDF/UA and WCAG rules. When you receive a hard error in the PDF/UA tab, this is considered a bug in Typst and should be [reported on GitHub](https://github.com/typst/typst/issues). Warnings in the PDF/UA and Quality tabs may either be bugs, problems in your document, or neither. Check on the [Forum][Typst Forum] or on [Discord][Discord] if you are unsure. Errors and warnings in the WCAG tab indicate problems with your document.
+- **[PDF Accessibility Checker (PAC)][PAC]:** フリーウェアのPACは、あなたの文書がPDF/UAやWCAGのルールに準拠しているかどうかをチェックします。PDF/UAタブで重大なエラーが表示された場合、これはTypstのバグと見なされるため、[GitHubで報告](https://github.com/typst/typst/issues)してください。PDF/UAとQualityタブの警告は、バグ、文書の問題、またはいずれでもない可能性があります。わからない場合は、[フォーラム][Typst Forum]や[Discord][Discord]で確認してください。WCAGタブのエラーと警告は、あなたの文書に問題があることを示しています。
 
-- **[Accessibility Check in Adobe Acrobat Pro][acro-check]:** The accessibility checker in the paid version of Adobe Acrobat checks all PDF documents for problems. Instead of checking compliance with a well-known international or industry standard, Adobe has created their own suite of tests. Because the rules behind these tests sometimes contradict international standards like PDF/UA, some of Acrobat's checks are expected to fail for Typst documents[^2]. Other checks, such as the contrast check are useful and indicate problems with your document.
+- **[Accessibility Check in Adobe Acrobat Pro][acro-check]:** 有償版Adobe Acrobatに搭載されているアクセシビリティチェッカーは、すべてのPDF文書について問題がないかを確認します。よく知られた国際規格や業界規格への準拠を確認するのではなく、Adobeは独自のテスト群を作成しています。これらのテストの判定基準が、PDF/UAのような国際規格と矛盾することがあるため、Acrobatの一部のチェックはTypst文書では失敗することが想定されます[^2]。コントラストチェックなどの他のチェックは有用であり、あなたの文書に問題があることを示します。
 
-When doing manual checking, you can start with a checklist. If your organization places emphasis on accessibility, they will sometimes have their own list. In absence of one, you can try lists by universities such as [Universität Bremen (in English)][checklist-unib] or governments such as in [Canada][checklist-canada] or by the [US Social Security Administration][checklist-us-ssa]. Although these checklists differ in verbosity, they all cover the most essential manual checks. Many of the technical checks in them can be skipped if you choose PDF/UA-1 export in Typst. If unsure which checklist to use, choose one from an organization culturally similar to yours.
+手動チェックを行う際は、まずチェックリストの作成から始めることができます。あなたの組織がアクセシビリティを重視している場合、独自のチェックリストを持っていることがあります。そのようなリストがない場合は、[ブレーメン大学（英語）][checklist-unib]や[カナダ政府][checklist-canada]、[米国社会保障局][checklist-us-ssa]などの大学や政府のリストを試してみることができます。これらのチェックリストは記述の詳しさが異なりますが、すべて最も重要な手動チェックをカバーしています。TypstでPDF/UA-1エクスポートを選択していれば、それらに含まれる技術的なチェックの多くはスキップできます。どのチェックリストを使用するか迷った場合は、自分の組織と文化的に近い組織のものを選んでください。
 
-However, to reach the highest standard of accessibility for widely circulated documents, consider checking your document with AT. Although there are many AT products and PDF viewers, it is typically sufficient to test a single combination. Which is best differs depending on your operating system:
+しかしながら、広く流通する文書で最高水準のアクセシビリティを目指すのであれば、ATを用いて文書をチェックすることを検討してください。AT製品やPDFビューアーは多数ありますが、通常は1つの組み合わせをテストするだけで十分です。どれが最適かは、使用しているオペレーティングシステムによって異なります。
 
-- Windows: Test with [Adobe Acrobat][Acrobat] and [NVDA][NVDA]. NVDA is free, open-source software. A free version of Acrobat is available.
-- macOS: Test with [Adobe Acrobat][Acrobat] and [VoiceOver][VoiceOver]. VoiceOver is the screen reader that is built into macOS and other Apple platforms.
-- Linux: Test with [Evince][Evince] or [Okular][Okular] and [Orca][Orca]. All three tools are free, open-source software. However, AT support across Linux platforms lags behind what is available on Windows and macOS. Likewise, Evince and Okular have less accessibility support than Acrobat. We strongly suggest testing with Acrobat instead.
+- Windows: [Adobe Acrobat][Acrobat]と[NVDA][NVDA]でテストしてください。NVDAは無料のオープンソースソフトウェアです。Acrobatの無料版も利用可能です。
+- macOS: [Adobe Acrobat][Acrobat]と[VoiceOver][VoiceOver]でテストしてください。VoiceOverはmacOSやその他のAppleプラットフォームに組み込まれているスクリーンリーダーです。
+- Linux: [Evince][Evince]または[Okular][Okular]と[Orca][Orca]でテストしてください。これらの3つのツールはすべて無料のオープンソースソフトウェアです。ただし、Linuxプラットフォーム全体でのATサポートは、WindowsやmacOSで利用可能なものよりも遅れています。同様に、EvinceやOkularはAcrobatほどアクセシビリティサポートが充実していません。代わりにAcrobatでテストすることを強くお勧めします。
 
-When first getting into testing, consider completing the interactive training program your screen reader offers, if any. Building confidence with a screen reader helps you experience your document like a full-time screen reader user. When checking your document, check that it not only makes all the same information accessible that is available to a sighted user, but also that it is easy to navigate. The experience your users will have will vary based on the pairing of PDF viewer and AT they use.
+テストを始めたばかりのときは、使っているスクリーンリーダーに対話型のトレーニングプログラムがある場合は、それを完了することを検討してください。スクリーンリーダーに慣れることは、常時スクリーンリーダーを使うユーザーのように文書を体験する助けになります。文書を確認する際は、目の見えるユーザーが利用できるものと同じ情報のすべてにアクセスできるようになっていることだけでなく、ナビゲーションしやすいことも確認してください。ユーザーが得る体験は、市よするPDFビューアーとATの組み合わせによって異なります。
 
 ## Limits and considerations for export formats { #limits-and-considerations-for-export-formats }
 
