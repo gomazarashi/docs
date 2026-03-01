@@ -130,7 +130,7 @@ Webアプリでは、内蔵の色覚異常シミュレーターを使ってデ�
 <img src="color-contrast.png" alt="Two callout boxes with the text 'Caution: Keep hands away from active stapler' with different designs. Each box has a contrast gauge for its text and graphical elements below it. The left box is shaded in a light red and the text is a regular shade of red. It has a text contrast of 2.8:1 and a graphics contrast of 1.4:1. The right box is white with a red outline and dark red text. It has a text contrast of 5.9:1 and a graphics contrast of 3.9:1." width="1536" height="708" style="box-shadow: 0 4px 12px rgb(89 85 101 / 20%); width: 512px; max-width: 100%; height: auto; display: block; margin: 24px auto; border-radius: 6px">
 </div>
 
-この例では、注意喚起ボックスの2つのデザインを比較できます。これらのボックスはユーザーが危険を回避するのを助けることを目的としているため、ユーザーが実際にその内容を読めることが極めて重要です。しかし、最初のボックスでは背景がかなり明るく、ボックス自体の輪郭を見分けにくくなっています。さらに悪いことに、薄い赤の背景上では赤い文字が読みにくくなっています。文字のコントラスト比は2.8:1で、Web Content Accessibility Guidelines（WCAG）が定める4.5:1の基準を満たしていません。同様に、ボックスの白いページ背景に対するコントラスト比も1.4:1で、グラフィカルオブジェクトに対する3:1の閾値を下回っています。
+この例では、注意喚起ボックスの2つのデザインを比較できます。これらのボックスはユーザーが危険を回避するのを助けることを目的としているため、ユーザーが実際にその内容を読めることがきわめて重要です。しかし、最初のボックスでは背景がかなり明るく、ボックス自体の輪郭を見分けにくくなっています。さらに悪いことに、薄い赤の背景上では赤い文字が読みにくくなっています。文字のコントラスト比は2.8:1で、Web Content Accessibility Guidelines（WCAG）が定める4.5:1の基準を満たしていません。同様に、ボックスの白いページ背景に対するコントラスト比も1.4:1で、グラフィカルオブジェクトに対する3:1の閾値を下回っています。
 
 2つ目の例では、WCAG AA の色コントラスト閾値を満たすように色が調整されています。視力に問題がない場合でも、ボックス内の文字は明らかに読みやすくなっているはずです!
 
