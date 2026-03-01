@@ -336,9 +336,9 @@ PDF文書がアクセシブルかどうかをテストするには、自動ツ�
 
 前述のとおり、PNGおよびSVGエクスポートで作成されたファイルはアクセシブルではありません。
 
-[^1]: Dataset from the German Federal Statistics Authority (Statistisches Bundesamt, Destatis). ["Bruttostromerzeugung nach Energieträgern in Deutschland ab 1990"](https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Energie/Erzeugung/bar-chart-race.html), 2025, available under the _Data licence Germany – attribution – version 2.0._
+[^1]: ドイツ連邦統計局（Statistisches Bundesamt, Destatis）のデータセット。["Bruttostromerzeugung nach Energieträgern in Deutschland ab 1990"](https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Energie/Erzeugung/bar-chart-race.html), 2025, available under the _Data licence Germany – attribution – version 2.0._
 
-[^2]: For example, when using footnotes, the check "Lbl and LBody must be children of LI" in the "List" section is expected to fail.
+[^2]: 例えば脚注を使用する場合、「List」セクションにある「Lbl and LBody must be children of LI」というチェック項目が失敗（不合格）になることが想定されます。
 
 [NVDA]: https://www.nvaccess.org/download/
 [Acrobat]: https://www.adobe.com/acrobat.html
