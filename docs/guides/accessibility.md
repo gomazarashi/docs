@@ -300,11 +300,15 @@ EN 301 549および関連するWCAGの規定に適合するためには、文書
 
 このガイドの使用は、どちらの規則への準拠に近づくのにも役立ちます。
 
-## Testing for Accessibility { #testing-for-accessibility }
+## アクセシビリティのテスト { #testing-for-accessibility }
 
 In order to test whether your PDF document is accessible, you can use automated tools and manual testing. Some standards like PDF/UA and PDF/A can be checked exclusively through automated tools, while some rules in WCAG and other standards require manual checks. Many of the automatable checks are automatically passed by Typst when Tagged PDF is enabled. For many other automatable checks, you can enable PDF/UA-1 export so that Typst will run them instead. Automated tools can only provide a baseline of accessibility. For truly Universal Access, it is best if you try the document yourself with AT.
 
+PDF文書がアクセシブルかどうかをテストするには、自動ツールと手動テストを利用できます。PDF/UAやPDF/Aのような一部の標準は自動ツールだけでチェックできますが、WCAGやその他の標準のいくつかのルールは手動チェックが必要です。自動化可能なチェックの多くは、Tagged PDFが有効になっていればTypstによって自動的に通過します。さらに多くの自動化可能なチェックについては、PDF/UA-1エクスポートを有効にすると、Typstが代わりにそれらを実行します。自動化ツールはアクセシビリティの基準を提供することしかできません。真のユニバーサルアクセスのためには、ATを使って自分で文書を試すのが最善です。
+
 Here is a list of automated checkers to try to test for conformance:
+
+適合性の確認に使える自動チェッカーの一覧は以下の通りです。
 
 - **[veraPDF][veraPDF]:** This open-source tool can check if your PDF file conforms to the parts of the PDF/A and PDF/UA standards it declared conformance with. Use this tool if you have chosen one of these standards during export. Failures are considered bugs in Typst and should be [reported on GitHub](https://github.com/typst/typst/issues).
 
